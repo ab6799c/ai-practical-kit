@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skill Shop · AI 技能包商店</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; font-family:'Microsoft YaHei','PingFang SC',sans-serif; }
+  body { background:#0f1115; color:#e8e8ee; min-height:100vh; }
+  header { padding:48px 20px 28px; text-align:center; }
+  header h1 { font-size:32px; font-weight:900; background:linear-gradient(90deg,#8b5cf6,#2ee6a8); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+  header p { color:#8a8f9c; margin-top:10px; font-size:15px; }
+  .grid { max-width:980px; margin:0 auto; padding:0 20px 60px; display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:22px; }
+  .card { background:#161a22; border:1px solid #232936; border-radius:16px; overflow:hidden; transition:transform .2s; }
+  .card:hover { transform:translateY(-3px); }
+  .card img { width:100%; aspect-ratio:3/4; object-fit:cover; display:block; }
+  .card .body { padding:16px; }
+  .card h3 { font-size:17px; font-weight:700; }
+  .card .desc { font-size:13px; color:#9aa0ad; margin-top:6px; line-height:1.5; }
+  .card .row { display:flex; justify-content:space-between; align-items:center; margin-top:14px; }
+  .card .price { font-size:20px; font-weight:900; color:#ffb020; }
+  .card .cta { font-size:12px; background:#232936; color:#c9cede; padding:6px 12px; border-radius:8px; text-decoration:none; }
+  .howto { max-width:980px; margin:0 auto; padding:0 20px 70px; }
+  .howto h2 { font-size:20px; margin-bottom:12px; color:#cfd4de; }
+  .howto ol { padding-left:22px; color:#9aa0ad; line-height:2; font-size:14px; }
+  .howto code { background:#232936; padding:2px 8px; border-radius:6px; color:#2ee6a8; }
+  footer { text-align:center; color:#5a6070; font-size:12px; padding:24px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Skill Shop · AI 技能包商店</h1>
+  <p>把「行业老手的经验」打包成 AI 可直接调用的技能包 · 贴进 Claude Code 即装即用</p>
+</header>
+
+<div class="grid">
+  <div class="card">
+    <img src="covers/cover-01-ai-short-drama.png" alt="AI 短剧制作">
+    <div class="body">
+      <h3>AI 短剧制作</h3>
+      <p class="desc">小说一键变竖屏短剧 · 场景图/配音/字幕/合成全自动</p>
+      <div class="row"><span class="price">¥49.9</span><a class="cta" href="01-ai-short-drama/">查看 →</a></div>
+    </div>
+  </div>
+  <div class="card">
+    <img src="covers/cover-02-writing.png" alt="代码之王写作">
+    <div class="body">
+      <h3>代码之王·写作</h3>
+      <p class="desc">短句/高信息密度/表格+Emoji/冷叙事 · 有辨识度的文字</p>
+      <div class="row"><span class="price">¥29.9</span><a class="cta" href="02-coding-king-writing/">查看 →</a></div>
+    </div>
+  </div>
+  <div class="card">
+    <img src="covers/cover-03-houhei.png" alt="厚黑学·识人诊断">
+    <div class="body">
+      <h3>厚黑学·识人诊断</h3>
+      <p class="desc">两轴看穿一个人靠不靠谱 · 失败复盘三段归因</p>
+      <div class="row"><span class="price">¥29.9</span><a class="cta" href="03-houhei-person-reading/">查看 →</a></div>
+    </div>
+  </div>
+  <div class="card">
+    <img src="covers/cover-04-sunzi.png" alt="孙子兵法·谈判应变">
+    <div class="body">
+      <h3>孙子兵法·谈判应变</h3>
+      <p class="desc">打法随对手变 · 不硬套剧本 · 识别「机不可设」</p>
+      <div class="row"><span class="price">¥29.9</span><a class="cta" href="04-sunzi-negotiation/">查看 →</a></div>
+    </div>
+  </div>
+</div>
+
+<div class="howto">
+  <h2>怎么用(3 秒上手)</h2>
+  <ol>
+    <li>把技能文件夹放进 <code>~/.claude/skills/</code> 或项目 <code>.claude/skills/</code></li>
+    <li>重启 Claude Code</li>
+    <li>直接说触发语(如「把这部小说做成短剧」「用我的风格写」)即可生效</li>
+  </ol>
+  <p style="margin-top:14px;color:#8a8f9c;font-size:13px;">需要 Claude Code 环境。购买/答疑请联系卖家。</p>
+</div>
+
+<footer>Skill Shop · 每个技能包 = 完整 SKILL.md + 3 秒上手说明 · 卖方法论与框架,不含整段图书原文</footer>
+</body>
+</html>
