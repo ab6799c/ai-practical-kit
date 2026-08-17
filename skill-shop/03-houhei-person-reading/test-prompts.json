@@ -1,0 +1,73 @@
+{
+  "skill": "houhei-two-axis-human-nature",
+  "version": "0.1.0",
+  "source_book": "《厚黑学》 李宗吾",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我手下有个技术主管，技术特别强，但总被别的部门欺负，给他加活他就默默接，被抢功也不吭声。我想不明白：他这么强的人为什么一直升不上去？",
+      "expected_behavior": "激活 houhei-two-axis-human-nature，对主管做两轴诊断（厚维强/黑维缺位的韩信型），并回答『为什么上不去』（差在哪一截）",
+      "notes": "正面: 评估某人靠谱度 + 为什么上不去（A2 触发场景 1/4）"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "这次新产品上线彻底失败了，老板让我们复盘。我觉得是市场时机不好，但我总觉得不能全怪环境。你说这事到底该怪谁？",
+      "expected_behavior": "激活 houhei-two-axis-human-nature，走失败复盘三段归因（先查厚→再查黑→最后才归因外部）",
+      "notes": "正面: 失败复盘归因（A2 触发场景 2 + E 步骤 3）"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "我那个合伙人特别讲情面，该砍的项目他不肯砍，说怕伤感情。我担心跟他合作下去会出事，怎么评估他这个人靠不靠谱？",
+      "expected_behavior": "激活 houhei-two-axis-human-nature，评估合伙人的黑维缺位配置（被恩义/不忍绑架）与失效模式",
+      "notes": "正面: 合作前预判对方软肋/底线/失效模式（A2 触发场景 3）"
+    },
+    {
+      "id": "should-trigger-04",
+      "type": "should_trigger",
+      "prompt": "她太要面子了，被领导当众批评两句，第二天就提离职。这样的人在关键时候靠得住吗？",
+      "expected_behavior": "激活 houhei-two-axis-human-nature，诊断厚维缺位（受不得气/太要面子）及失效模式（一激即退场）",
+      "notes": "正面: 评估某人，语言信号『太要面子』（A2 语言信号命中）"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "厚黑学里『厚』和『黑』到底是什么意思？帮我讲讲这个理论。",
+      "expected_behavior": "不应激活本 skill（纯理论概念查询、无评估对象），可直接讲解概念，不套用两轴诊断流程",
+      "notes": "诱饵: 概念查询，无评估对象"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "新来的空降总监一上任就烧了三把火，把原来的老人调岗换血，他到底想干嘛？",
+      "expected_behavior": "不应激活本 skill，应激活 houhei-power-behavior（解读居位者行为/新官三把火/位置决定行为）",
+      "notes": "跨 skill 混淆诱饵 (硬性要求): 权力情境行为图谱 vs 两轴性格评估"
+    },
+    {
+      "id": "should-not-trigger-03",
+      "type": "should_not_trigger",
+      "prompt": "教教我怎么做人狠一点，以后遇到抢我功劳的人我直接翻脸，给我点实操方法。",
+      "expected_behavior": "不应激活本 skill（本 skill 是观察透镜非操作手册，B 边界明确禁止），应激活 houhei-lens-not-prescription 输出『模型是透镜非处方』元警告",
+      "notes": "跨 skill 混淆诱饵: 学习应用冲动 → 元认知边界 skill"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我今天被老板当众骂了，心里特别难受，你觉得我该不该当场怼回去？",
+      "expected_behavior": "合理判断为不调用本 skill（即时情绪/应对决策，非评估他人配置、也非结构化复盘归因，且无多情境证据）；可温和提示『厚维』概念但不进入两轴诊断流程",
+      "notes": "边界: 个人即时受辱场景 vs 厚维评估——区分情绪求助与两轴诊断"
+    },
+    {
+      "id": "edge-02",
+      "type": "edge_case",
+      "prompt": "我在面一个销售总监候选人，他说他曾经被客户当面羞辱，当场没翻脸，第二天照常去拜访。单凭这件事怎么判断他？",
+      "expected_behavior": "可激活本 skill 但按 B 边界提示证据不足——只有单一情境行为，须多情境交叉验证，输出『证据不足』而非硬打分",
+      "notes": "边界: 单一情境证据（h01 边界『仅凭单情境下结论』被禁止）"
+    }
+  ],
+  "minimum_pass_rate": 0.8,
+  "notes": "4 should_trigger + 3 should_not_trigger(含 2 条跨 skill 混淆：h05 权力行为、h08 透镜非处方) + 2 edge_case。should_not_trigger 容错为 0。"
+}

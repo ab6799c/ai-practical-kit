@@ -1,0 +1,73 @@
+{
+  "skill": "cw-adapt",
+  "version": "0.1.0",
+  "source_book": "《孙子兵法》孙武 ＋ 《三十六计》佚名",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "上次那套打法这次不灵了，对手好像专门研究过我们了，怎么办？",
+      "expected_behavior": "应激活 cw-adapt，识别这次的变化点并针对性地换打法",
+      "notes": "正面场景: 上次打法失效"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "竞争对手把我的营销套路全学走了，我们是不是该换个打法？",
+      "expected_behavior": "应激活 cw-adapt，分析对手学走后该如何变招",
+      "notes": "正面场景: 对手学走套路"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "我们要进入一个全新的海外市场，之前在国内的打法还能直接照搬吗？",
+      "expected_behavior": "应激活 cw-adapt，评估环境差异、按新局势定打法而非照搬旧经验",
+      "notes": "正面场景: 全新局势不能照搬"
+    },
+    {
+      "id": "should-trigger-04",
+      "type": "should_trigger",
+      "prompt": "公司一直用同一套销售流程，但感觉市场变了，最佳实践还适用吗？",
+      "expected_behavior": "应激活 cw-adapt，判断环境变化后是否沿用或调整，并检查是否落入预设剧本陷阱",
+      "notes": "正面场景: 怀疑最佳实践过期"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "对手比我们大好几倍，正面拼不过，怎么破？",
+      "expected_behavior": "不应激活 cw-adapt，应激活 cw-force-application（正奇配力+避实击虚）",
+      "notes": "跨 skill 混淆诱饵 (adapt↔force): force 管配力，本 skill 管变阵"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "我们完全没有对手这次会怎么变的情报，你让我怎么变？第一步是不是该先摸清他的动向？",
+      "expected_behavior": "不应激活 cw-adapt，应激活 cw-information-warfare（情报不足时'变'是瞎变，先用相敌/五间建立判断依据）",
+      "notes": "跨 skill 混淆诱饵 (adapt↔info): 依赖链——adapt 依赖信息战"
+    },
+    {
+      "id": "should-not-trigger-03",
+      "type": "should_not_trigger",
+      "prompt": "这是我们内部的标准作业流程，客户和供应商都依赖这套，不能随便变。",
+      "expected_behavior": "不应激活 cw-adapt，成熟固化流程该固化（B 边界），过度变通破坏一致性",
+      "notes": "诱饵: 固化场景"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "上次打法不灵了，但我们连对手动向的情报都没有，全靠猜。",
+      "expected_behavior": "应优先激活 cw-information-warfare 建立判断依据，而非直接瞎变招；可提示先情报后 adapt",
+      "notes": "边界: 依赖链——信息不足时变是瞎变"
+    },
+    {
+      "id": "edge-02",
+      "type": "edge_case",
+      "prompt": "我昨天刚定下方案今天就后悔了，是不是该再变一下？",
+      "expected_behavior": "不应机械激活 cw-adapt，'变'必须有对手变化/环境变化的依据，无依据频繁变阵是见风使舵（B 边界）",
+      "notes": "边界: 区分因敌制胜与随性而变"
+    }
+  ],
+  "minimum_pass_rate": 0.8,
+  "notes": "4 条 should_trigger + 3 条 should_not_trigger（含 2 条跨 skill 混淆）+ 2 条 edge_case。诱饵容错为 0。"
+}
