@@ -1,0 +1,107 @@
+{
+  "series": "AI短剧demo",
+  "title": "第1集 · 老板的秘密",
+  "episode": 0,
+  "episode_label": "第1集 · 老板的秘密",
+  "total_duration_seconds": 35.0,
+  "scene_count": 3,
+  "characters": [],
+  "locations": [],
+  "hook_text": "未完待续——下一集更精彩 🔥",
+  "scenes": [
+    {
+      "id": "scene-01",
+      "title": "场景一:深夜办公室",
+      "duration_seconds": 13.0,
+      "characters": [],
+      "locations": [],
+      "image_prompt": "场景1：场景一:深夜办公室。角色：人物。地点：室内。电影感镜头，办公室还亮着灯。竖屏构图 9:16，电影级质感，高细节，暗调氛围。",
+      "narration": "旁白:凌晨两点,办公室还亮着灯。 林晚(焦虑):这个方案再不过,公司就没了。 老板(神秘):别慌,我有办法。",
+      "dialogue": "",
+      "full_text": "旁白:凌晨两点,办公室还亮着灯。 林晚(焦虑):这个方案再不过,公司就没了。 老板(神秘):别慌,我有办法。",
+      "segments": [
+        {
+          "type": "narration",
+          "text": "旁白:凌晨两点,办公室还亮着灯。",
+          "speaker": null
+        },
+        {
+          "type": "narration",
+          "text": "林晚(焦虑):这个方案再不过,公司就没了。",
+          "speaker": null
+        },
+        {
+          "type": "narration",
+          "text": "老板(神秘):别慌,我有办法。",
+          "speaker": null
+        }
+      ],
+      "raw": "## 场景一:深夜办公室\n旁白:凌晨两点,办公室还亮着灯。\n林晚(焦虑):这个方案再不过,公司就没了。\n老板(神秘):别慌,我有办法。"
+    },
+    {
+      "id": "scene-02",
+      "title": "场景二:车库交易",
+      "duration_seconds": 11.0,
+      "characters": [],
+      "locations": [],
+      "image_prompt": "场景2：场景二:车库交易。角色：人物。地点：室内。电影感镜头，戏剧化打光，细节丰富。竖屏构图 9:16，电影级质感，高细节，暗调氛围。",
+      "narration": "旁白:老板带林晚去了地下车库。 神秘人(低沉):东西带来了吗? 老板(压低声音):都在这了。",
+      "dialogue": "",
+      "full_text": "旁白:老板带林晚去了地下车库。 神秘人(低沉):东西带来了吗? 老板(压低声音):都在这了。",
+      "segments": [
+        {
+          "type": "narration",
+          "text": "旁白:老板带林晚去了地下车库。",
+          "speaker": null
+        },
+        {
+          "type": "narration",
+          "text": "神秘人(低沉):东西带来了吗?",
+          "speaker": null
+        },
+        {
+          "type": "narration",
+          "text": "老板(压低声音):都在这了。",
+          "speaker": null
+        }
+      ],
+      "raw": "## 场景二:车库交易\n旁白:老板带林晚去了地下车库。\n神秘人(低沉):东西带来了吗?\n老板(压低声音):都在这了。"
+    },
+    {
+      "id": "scene-03",
+      "title": "场景三:真相浮现",
+      "duration_seconds": 11.0,
+      "characters": [],
+      "locations": [],
+      "image_prompt": "场景3：场景三:真相浮现。角色：人物。地点：室内。电影感镜头，戏剧化打光，细节丰富。竖屏构图 9:16，电影级质感，高细节，暗调氛围。",
+      "narration": "旁白:林晚这才看清,所谓的 林晚(震惊):你……你是要跑路? 老板(决绝):我只能这样。",
+      "dialogue": "办法",
+      "full_text": "旁白:林晚这才看清,所谓的 林晚(震惊):你……你是要跑路? 老板(决绝):我只能这样。 办法",
+      "segments": [
+        {
+          "type": "narration",
+          "text": "旁白:林晚这才看清,所谓的",
+          "speaker": null
+        },
+        {
+          "type": "dialogue",
+          "text": "办法",
+          "speaker": null
+        },
+        {
+          "type": "narration",
+          "text": "林晚(震惊):你……你是要跑路?",
+          "speaker": null
+        },
+        {
+          "type": "narration",
+          "text": "老板(决绝):我只能这样。",
+          "speaker": null
+        }
+      ],
+      "raw": "## 场景三:真相浮现\n旁白:林晚这才看清,所谓的\"办法\"是一场骗局。\n林晚(震惊):你……你是要跑路?\n老板(决绝):我只能这样。"
+    }
+  ],
+  "source_file": "novel_input\\第1集.md",
+  "extracted_at": "2026-08-17T16:30:06.364296"
+}
