@@ -13,16 +13,18 @@ SR, CH, SW = 24000, 1, 2
 FFMPEG = shutil.which("ffmpeg")
 if not FFMPEG:
     candidates = [
-        "D:/NewProject/MoneyPrinterTurbo/.venv/Lib/site-packages/imageio_ffmpeg/binaries/ffmpeg-win-x86_64-v7.1.exe",
         "C:/Program Files/ffmpeg/bin/ffmpeg.exe",
         "C:/ffmpeg/bin/ffmpeg.exe",
+        "/usr/bin/ffmpeg",
+        "/usr/local/bin/ffmpeg",
     ]
     for c in candidates:
         if os.path.exists(c):
             FFMPEG = c
             break
 if not FFMPEG:
-    FFMPEG = "ffmpeg"  # fallback, will error with clear message
+    # 若未安装 ffmpeg:请安装(winget install ffmpeg)或 pip install imageio-ffmpeg 后把路径加进来
+    FFMPEG = "ffmpeg"
 
 
 def parse_scenes(p):
